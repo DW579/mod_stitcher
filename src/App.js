@@ -24,6 +24,7 @@ class App extends Component {
                     },
                 },
                 CrossSell_Template: {
+                    mods: ["image", "text"],
                     image: {
                         html: "<img />",
                     },
@@ -32,6 +33,7 @@ class App extends Component {
                     },
                 },
                 DirectTVStream: {
+                    mods: ["image", "text"],
                     image: {
                         html: "<img />",
                     },
@@ -42,14 +44,61 @@ class App extends Component {
             },
             "H-D": {
                 name: "Harley Davidson",
-                shells: [
-                    "eComm",
-                    "Insurance",
-                    "Museum_Rublings",
-                    "New_Brand",
-                    "Visa",
-                    "PanAm",
-                ],
+                shells: ["eComm", "Insurance", "Museum_Rublings", "New_Brand", "Visa", "PanAm", ],
+                eComm: {
+                    mods: ["image", "text"],
+                    image: {
+                        html: "<img />",
+                    },
+                    text: {
+                        html: "<p></p>",
+                    },
+                },
+                Insurance: {
+                    mods: ["image", "text"],
+                    image: {
+                        html: "<img />",
+                    },
+                    text: {
+                        html: "<p></p>",
+                    },
+                },
+                Museum_Rublings: {
+                    mods: ["image", "text"],
+                    image: {
+                        html: "<img />",
+                    },
+                    text: {
+                        html: "<p></p>",
+                    },
+                },
+                New_Brand: {
+                    mods: ["image", "text"],
+                    image: {
+                        html: "<img />",
+                    },
+                    text: {
+                        html: "<p></p>",
+                    },
+                },
+                Visa: {
+                    mods: ["image", "text"],
+                    image: {
+                        html: "<img />",
+                    },
+                    text: {
+                        html: "<p></p>",
+                    },
+                },
+                PanAm: {
+                    mods: ["image", "text"],
+                    image: {
+                        html: "<img />",
+                    },
+                    text: {
+                        html: "<p></p>",
+                    },
+                },
             },
         },
     };
