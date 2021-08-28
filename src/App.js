@@ -7,12 +7,22 @@ class App extends Component {
         client: "",
         shell: "",
         disableClient: false,
-        disableShell: false
+        disableShell: false,
+        data: {
+            ATT: {
+                name: "AT&T"
+            },
+            HD: {
+                name: "Harly Davidson"
+            }
+        }
     }
 
     handleClient = (client) => {
+        const client_name = this.state.data[client].name;
+
         this.setState(() => ({
-            client,
+            client: client_name,
             disableClient: true
         }));
     }
@@ -34,10 +44,10 @@ class App extends Component {
                                 title="Select Client"
                                 disabled={this.state.disableClient}
                             >
-                                <Dropdown.Item onClick={() => this.handleClient("AT&T")}>
+                                <Dropdown.Item onClick={() => this.handleClient("ATT")}>
                                     AT&T
                                 </Dropdown.Item>
-                                <Dropdown.Item onClick={() => this.handleClient("H-D")}>
+                                <Dropdown.Item onClick={() => this.handleClient("HD")}>
                                     H-D
                                 </Dropdown.Item>
                             </DropdownButton>
