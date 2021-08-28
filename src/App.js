@@ -7,6 +7,7 @@ class App extends Component {
         client: "",
         shell: "",
         html: "",
+        img_count: 1,
         disableClient: false,
         disableShell: true,
         disableMod: true,
@@ -26,7 +27,7 @@ class App extends Component {
                 CrossSell_Template: {
                     mods: ["image", "text"],
                     image: {
-                        html: "<img />",
+                        html: "<img src='images/d_' alt='' />",
                     },
                     text: {
                         html: "<p></p>",
@@ -120,10 +121,22 @@ class App extends Component {
     };
 
     handleMod = (mod) => {
-        const { client, shell, html, data} = this.state;
+        const { client, shell, html, img_count, data} = this.state;
+
+        let string = data[client][shell][mod].html;
+
+        // AT&T Logic
+        if(client === "AT&T" && mod === "image") {
+            let sub1 = string.substring(0, string.search("d_") + 2);
+            let sub2 = string.substring(string.search("d_") + 2);
+
+            string = sub1 + img_count.toString() + sub2;
+
+        }
 
         this.setState(() => ({
-            html: html + data[client][shell][mod].html + "\n"
+            html: html + string + "\n",
+            img_count: img_count + 1
         }))
     }
 
@@ -137,6 +150,7 @@ class App extends Component {
                         <Col>
                             <h3>Selected client: {this.state.client}</h3>
                             <h3>Selected shell: {this.state.shell}</h3>
+                            <h3>Image count: {this.state.img_count}</h3>
                         </Col>
                     </Row>
                     <Row>
