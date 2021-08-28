@@ -6,6 +6,7 @@ class App extends Component {
     state = {
         client: "",
         shell: "",
+        html: "",
         disableClient: false,
         disableShell: true,
         disableMod: true,
@@ -70,8 +71,14 @@ class App extends Component {
     };
 
     handleMod = (mod) => {
-        console.log(mod)
+        const { client, shell, html, data} = this.state;
+
+        this.setState(() => ({
+            html: html + data[client][shell][mod].html + "\n"
+        }))
     }
+
+    // Metacharacter - \n: new line, \t: tab
 
     render() {
         return (
@@ -150,13 +157,14 @@ class App extends Component {
                         </Col>
                         <Col>
                             <FloatingLabel
-                                controlId="textarea"
+                                controlId="textareaForm"
                                 label="HTML"
                             >
                                 <Form.Control
                                     as="textarea"
                                     placeholder=""
                                     style={{ height: "700px" }}
+                                    defaultValue={this.state.html}
                                 />
                             </FloatingLabel>
                         </Col>
