@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Dropdown, DropdownButton } from "react-bootstrap";
+import { Container, Row, Col, Dropdown, DropdownButton, FloatingLabel, Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {
@@ -131,7 +131,9 @@ class App extends Component {
                                     title="Select Mod"
                                     disabled={this.state.disableMod}
                                 >
-                                    {this.state.data[this.state.client][this.state.shell].mods.map((mod) => {
+                                    {this.state.data[this.state.client][
+                                        this.state.shell
+                                    ].mods.map((mod) => {
                                         return (
                                             <Dropdown.Item
                                                 onClick={() =>
@@ -145,6 +147,18 @@ class App extends Component {
                                     })}
                                 </DropdownButton>
                             )}
+                        </Col>
+                        <Col>
+                            <FloatingLabel
+                                controlId="textarea"
+                                label="HTML"
+                            >
+                                <Form.Control
+                                    as="textarea"
+                                    placeholder=""
+                                    style={{ height: "700px" }}
+                                />
+                            </FloatingLabel>
                         </Col>
                     </Row>
                 </Container>
