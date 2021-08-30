@@ -275,6 +275,9 @@ class App extends Component {
                             )}
                         </Col>
                     </Row>
+                    {this.state.client === "H-D" && this.state.shell === "eComm" (
+                        <eComm></eComm>
+                    )}
                     <Row>
                         <Col>
                             <FloatingLabel
