@@ -1,15 +1,21 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
+// eslint-disable-next-line 
 import { Container, Row, Col, Dropdown, DropdownButton, FloatingLabel, Form } from "react-bootstrap";
 import Clients from "./pages/Clients";
-import Shells from "./pages/Shells";
+
+import ATT from "./pages/att/AT&T";
+
+import HD from "./pages/hd/H-D";
+import Ecomm from "./pages/hd/shells/Ecomm";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {
     render() {
         return (
             <div>
-                <Container fluid>
+                <Container>
                     <Row>
                         <Col>
                             <Route
@@ -18,8 +24,16 @@ class App extends Component {
                                 render={() => <Clients></Clients>}
                             ></Route>
                             <Route
-                                path="/shells"
-                                render={() => <Shells></Shells>}
+                                path="/at&t"
+                                render={() => <ATT></ATT>}
+                            ></Route>
+                            <Route
+                                path="/h-d"
+                                render={() => <HD></HD>}
+                            ></Route>
+                            <Route
+                                path="/eComm"
+                                render={() => <Ecomm></Ecomm>}
                             ></Route>
                         </Col>
                     </Row>
@@ -140,17 +154,17 @@ export default App;
 //         },
 //     };
 
-//     bindClickthrough = (event) => {
-//         this.setState(() => ({
-//             clickthrough: event.target.value
-//         }))
-//     }
+    // bindClickthrough = (event) => {
+    //     this.setState(() => ({
+    //         clickthrough: event.target.value
+    //     }))
+    // }
 
-//     bindAlt = (event) => {
-//         this.setState(() => ({
-//             alt: event.target.value
-//         }))
-//     }
+    // bindAlt = (event) => {
+    //     this.setState(() => ({
+    //         alt: event.target.value
+    //     }))
+    // }
 
 //     handleClient = (client) => {
 //         this.setState(() => ({
@@ -290,17 +304,17 @@ export default App;
 //                             )}
 
 //                             {this.state.shell !== "" && (
-//                                 <FloatingLabel
-//                                     controlId="textareaAlt"
-//                                     label="Alt text"
-//                                     className="mb-3"
-//                                 >
-//                                     <Form.Control
-//                                         as="textarea"
-//                                         placeholder=""
-//                                         onChange={ this.bindAlt }
-//                                     />
-//                                 </FloatingLabel>
+                                // <FloatingLabel
+                                //     controlId="textareaAlt"
+                                //     label="Alt text"
+                                //     className="mb-3"
+                                // >
+                                //     <Form.Control
+                                //         as="textarea"
+                                //         placeholder=""
+                                //         onChange={ this.bindAlt }
+                                //     />
+                                // </FloatingLabel>
 //                             )}
 //                         </Col>
 //                     </Row>
@@ -309,17 +323,17 @@ export default App;
 //                     )}
 //                     <Row>
 //                         <Col>
-//                             <FloatingLabel
-//                                 controlId="textareaForm"
-//                                 label="HTML"
-//                             >
-//                                 <Form.Control
-//                                     as="textarea"
-//                                     placeholder=""
-//                                     style={{ height: "700px" }}
-//                                     defaultValue={this.state.html}
-//                                 />
-//                             </FloatingLabel>
+                            // <FloatingLabel
+                            //     controlId="textareaForm"
+                            //     label="HTML"
+                            // >
+                            //     <Form.Control
+                            //         as="textarea"
+                            //         placeholder=""
+                            //         style={{ height: "700px" }}
+                            //         defaultValue={this.state.html}
+                            //     />
+                            // </FloatingLabel>
 //                         </Col>
 //                     </Row>
 //                 </Container>
