@@ -182,34 +182,34 @@ export default App;
 //         }));
 //     };
 
-//     handleMod = (mod) => {
-//         let { client, shell, html, clickthrough, alt, img_count, data} = this.state;
+    // handleMod = (mod) => {
+    //     let { client, shell, html, clickthrough, alt, img_count, data} = this.state;
 
-//         let string = data[client][shell][mod].html;
+    //     let string = data[client][shell][mod].html;
 
-//         // AT&T Logic
-//         if(client === "AT&T" && shell === "CrossSell_Template" && mod === "image") {
+    //     // AT&T Logic
+    //     if(client === "AT&T" && shell === "CrossSell_Template" && mod === "image") {
 
-//             // Update images
-//             string = string.replace("d_", "d_" + img_count.toString());
-//             string = string.replace("m_", "m_" + img_count.toString());
+    //         // Update images
+    //         string = string.replace("d_", "d_" + img_count.toString());
+    //         string = string.replace("m_", "m_" + img_count.toString());
 
-//             img_count++;
+    //         img_count++;
 
-//             string = string.replace("C#1", clickthrough);
-//             string = string.replace("C#2", clickthrough);
+    //         string = string.replace("C#1", clickthrough);
+    //         string = string.replace("C#2", clickthrough);
 
-//             string = string.replace("A#1", alt);
-//             string = string.replace("A#2", alt);
+    //         string = string.replace("A#1", alt);
+    //         string = string.replace("A#2", alt);
 
-//         }
+    //     }
 
-//         this.setState(() => ({
-//             html: html + string + "\n\n",
-//             img_count
-//         }))
+    //     this.setState(() => ({
+    //         html: html + string + "\n\n",
+    //         img_count
+    //     }))
         
-//     }
+    // }
 
 //     // Metacharacter - \n: new line, \t: tab
 
@@ -267,26 +267,26 @@ export default App;
 //                             )}
 
 //                             {this.state.shell !== "" && (
-//                                 <DropdownButton
-//                                     id="dropdown-basic-button"
-//                                     title="Select Mod"
-//                                     disabled={this.state.disableMod}
-//                                 >
-//                                     {this.state.data[this.state.client][
-//                                         this.state.shell
-//                                     ].mods.map((mod) => {
-//                                         return (
-//                                             <Dropdown.Item
-//                                                 onClick={() =>
-//                                                     this.handleMod(mod)
-//                                                 }
-//                                                 key={mod}
-//                                             >
-//                                                 {mod}
-//                                             </Dropdown.Item>
-//                                         );
-//                                     })}
-//                                 </DropdownButton>
+                                // <DropdownButton
+                                //     id="dropdown-basic-button"
+                                //     title="Select Mod"
+                                //     disabled={this.state.disableMod}
+                                // >
+                                //     {this.state.data[this.state.client][
+                                //         this.state.shell
+                                //     ].mods.map((mod) => {
+                                //         return (
+                                //             <Dropdown.Item
+                                //                 onClick={() =>
+                                //                     this.handleMod(mod)
+                                //                 }
+                                //                 key={mod}
+                                //             >
+                                //                 {mod}
+                                //             </Dropdown.Item>
+                                //         );
+                                //     })}
+                                // </DropdownButton>
 //                             )}
 
 //                             {this.state.shell !== "" && (
