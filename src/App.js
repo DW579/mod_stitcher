@@ -9,13 +9,16 @@ import ATT from "./pages/att/AT&T";
 import HD from "./pages/hd/H-D";
 import Ecomm from "./pages/hd/shells/Ecomm";
 
+import Kraft from "./pages/kraft/Kraft";
+import Template2021 from "./pages/kraft/shells/Template_2021";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {
     render() {
         return (
             <div>
-                <Container>
+                <Container fluid>
                     <Row>
                         <Col>
                             <Route
@@ -35,6 +38,15 @@ class App extends Component {
                                 path="/eComm"
                                 render={() => <Ecomm></Ecomm>}
                             ></Route>
+                            <Route
+                                path="/kraft"
+                                render={() => <Kraft></Kraft>}
+                            ></Route>
+                            <Route
+                                path="/template_2021"
+                                render={() => <Template2021></Template2021>}
+                            ></Route>
+                            
                         </Col>
                     </Row>
                 </Container>
@@ -154,193 +166,7 @@ export default App;
 //         },
 //     };
 
-    // bindClickthrough = (event) => {
-    //     this.setState(() => ({
-    //         clickthrough: event.target.value
-    //     }))
-    // }
-
-    // bindAlt = (event) => {
-    //     this.setState(() => ({
-    //         alt: event.target.value
-    //     }))
-    // }
-
-//     handleClient = (client) => {
-//         this.setState(() => ({
-//             client,
-//             disableClient: true,
-//             disableShell: false,
-//         }));
-//     };
-
-//     handleShell = (shell) => {
-//         this.setState(() => ({
-//             shell,
-//             disableShell: true,
-//             disableMod: false
-//         }));
-//     };
-
-    // handleMod = (mod) => {
-    //     let { client, shell, html, clickthrough, alt, img_count, data} = this.state;
-
-    //     let string = data[client][shell][mod].html;
-
-    //     // AT&T Logic
-    //     if(client === "AT&T" && shell === "CrossSell_Template" && mod === "image") {
-
-    //         // Update images
-    //         string = string.replace("d_", "d_" + img_count.toString());
-    //         string = string.replace("m_", "m_" + img_count.toString());
-
-    //         img_count++;
-
-    //         string = string.replace("C#1", clickthrough);
-    //         string = string.replace("C#2", clickthrough);
-
-    //         string = string.replace("A#1", alt);
-    //         string = string.replace("A#2", alt);
-
-    //     }
-
-    //     this.setState(() => ({
-    //         html: html + string + "\n\n",
-    //         img_count
-    //     }))
-        
-    // }
-
 //     // Metacharacter - \n: new line, \t: tab
-
-//     render() {
-//         return (
-//             <div>
-//                 <Container fluid>
-//                     <Row>
-//                         <Col>
-//                             <h3>Selected client: {this.state.client}</h3>
-//                             <h3>Selected shell: {this.state.shell}</h3>
-//                             <h3>Image count: {this.state.img_count}</h3>
-//                         </Col>
-//                     </Row>
-//                     <Row>
-//                         <Col>
-//                             <DropdownButton
-//                                 id="dropdown-basic-button"
-//                                 title="Select Client"
-//                                 disabled={this.state.disableClient}
-//                             >
-//                                 <Dropdown.Item
-//                                     onClick={() => this.handleClient("AT&T")}
-//                                 >
-//                                     AT&T
-//                                 </Dropdown.Item>
-//                                 <Dropdown.Item
-//                                     onClick={() => this.handleClient("H-D")}
-//                                 >
-//                                     H-D
-//                                 </Dropdown.Item>
-//                             </DropdownButton>
-
-//                             {this.state.client !== "" && (
-//                                 <DropdownButton
-//                                     id="dropdown-basic-button"
-//                                     title="Select Shell"
-//                                     disabled={this.state.disableShell}
-//                                 >
-//                                     {this.state.data[
-//                                         this.state.client
-//                                     ].shells.map((shell) => {
-//                                         return (
-//                                             <Dropdown.Item
-//                                                 onClick={() =>
-//                                                     this.handleShell(shell)
-//                                                 }
-//                                                 key={shell}
-//                                             >
-//                                                 {shell}
-//                                             </Dropdown.Item>
-//                                         );
-//                                     })}
-//                                 </DropdownButton>
-//                             )}
-
-//                             {this.state.shell !== "" && (
-                                // <DropdownButton
-                                //     id="dropdown-basic-button"
-                                //     title="Select Mod"
-                                //     disabled={this.state.disableMod}
-                                // >
-                                //     {this.state.data[this.state.client][
-                                //         this.state.shell
-                                //     ].mods.map((mod) => {
-                                //         return (
-                                //             <Dropdown.Item
-                                //                 onClick={() =>
-                                //                     this.handleMod(mod)
-                                //                 }
-                                //                 key={mod}
-                                //             >
-                                //                 {mod}
-                                //             </Dropdown.Item>
-                                //         );
-                                //     })}
-                                // </DropdownButton>
-//                             )}
-
-//                             {this.state.shell !== "" && (
-//                                 <FloatingLabel
-//                                     controlId="textareaClickthrough"
-//                                     label="Clickthrough"
-//                                     className="mb-3"
-//                                 >
-//                                     <Form.Control
-//                                         as="textarea"
-//                                         placeholder=""
-//                                         onChange={ this.bindClickthrough }
-//                                     />
-//                                 </FloatingLabel>
-//                             )}
-
-//                             {this.state.shell !== "" && (
-                                // <FloatingLabel
-                                //     controlId="textareaAlt"
-                                //     label="Alt text"
-                                //     className="mb-3"
-                                // >
-                                //     <Form.Control
-                                //         as="textarea"
-                                //         placeholder=""
-                                //         onChange={ this.bindAlt }
-                                //     />
-                                // </FloatingLabel>
-//                             )}
-//                         </Col>
-//                     </Row>
-//                     {this.state.client === "H-D" && this.state.shell === "eComm" (
-//                         <eComm></eComm>
-//                     )}
-//                     <Row>
-//                         <Col>
-                            // <FloatingLabel
-                            //     controlId="textareaForm"
-                            //     label="HTML"
-                            // >
-                            //     <Form.Control
-                            //         as="textarea"
-                            //         placeholder=""
-                            //         style={{ height: "700px" }}
-                            //         defaultValue={this.state.html}
-                            //     />
-                            // </FloatingLabel>
-//                         </Col>
-//                     </Row>
-//                 </Container>
-//             </div>
-//         );
-//     }
-// }
 
 
 

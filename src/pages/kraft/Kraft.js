@@ -2,24 +2,21 @@ import React, { Component } from "react";
 import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-class Clients extends Component {
+class Kraft extends Component {
     render() {
         return (
             <div>
                 <Row>
                     <Col>
-                        Clients
+                        Kraft Shells
+                    </Col>
+                    <Col>
+                        <Link to="/">Reset</Link>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <Link to="/at&t">AT&T</Link>
-                    </Col>
-                    <Col>
-                        <Link to="/h-d">H-D</Link>
-                    </Col>
-                    <Col>
-                        <Link to="/kraft">Kraft</Link>
+                        <Link to="/template_2021">Template 2021</Link>
                     </Col>
                 </Row>
             </div>
@@ -28,4 +25,4 @@ class Clients extends Component {
     }
 }
 
-export default Clients;
+export default Kraft;

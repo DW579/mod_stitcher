@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Row, Col, FloatingLabel, Form, Dropdown, DropdownButton } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-class eComm extends Component {
+class Template2021 extends Component {
     state = {
         html: "",
         alt: "",
@@ -80,7 +80,7 @@ class eComm extends Component {
         return (
             <div>
                 <Row>
-                    <Col>eComm Shell</Col>
+                    <Col>Kraft - Template 2021 Shell</Col>
                     <Col>
                         <Link to="/">Reset</Link>
                     </Col>
@@ -168,4 +168,4 @@ class eComm extends Component {
     }
 }
 
-export default eComm;
+export default Template2021;

@@ -16,7 +16,7 @@ class HD extends Component {
                 </Row>
                 <Row>
                     <Col>
-                        <Link to="/eComm">eComm</Link>
+                        {/* <Link to="/template_2021">Template 2021</Link> */}
                     </Col>
                 </Row>
             </div>
