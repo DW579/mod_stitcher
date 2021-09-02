@@ -16,7 +16,7 @@ class ATT extends Component {
                 </Row>
                 <Row>
                     <Col>
-                        {/* <Link to="/at&t">AT&T</Link> */}
+                        <Link to="/cross-sell-700">CrossSell 700</Link>
                     </Col>
                 </Row>
             </div>

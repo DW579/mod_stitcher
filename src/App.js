@@ -5,6 +5,7 @@ import { Container, Row, Col, Dropdown, DropdownButton, FloatingLabel, Form } fr
 import Clients from "./pages/Clients";
 
 import ATT from "./pages/att/AT&T";
+import CrossSell700 from "./pages/att/shells/CrossSell_700";
 
 import HD from "./pages/hd/H-D";
 import Ecomm from "./pages/hd/shells/Ecomm";
@@ -29,6 +30,10 @@ class App extends Component {
                             <Route
                                 path="/at&t"
                                 render={() => <ATT></ATT>}
+                            ></Route>
+                            <Route
+                                path="/cross-sell-700"
+                                render={() => <CrossSell700></CrossSell700>}
                             ></Route>
                             <Route
                                 path="/h-d"
